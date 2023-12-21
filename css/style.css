@@ -1,13 +1,86 @@
-  
-* {
-  box-sizing: border-box; /*將寬高設定作用在邊框外緣的範圍內*/
-}
+* {box-sizing:border-box;}
 body {
-font-family:"Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, sans-serif, serif;
-margin: 0;
+  font-family:"Noto Sans CJK TC", "Microsoft JhengHei", PingFang, STHeiti, sans-serif, serif;
+  margin: 0;
+  font-size: 100%;
 }
 a {
   text-decoration: none; /*移除超連結底線*/
+}
+/*將所有的圖片區塊都消失不見*/
+.mySlideshows {
+  display: none;
+}
+.slideshow-container {
+  max-width:100%;
+  height:auto;
+  position: relative;
+  margin: 0 auto;
+}
+/*左右按鈕*/
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 10px 10px 0;
+  user-select: none;
+}
+/*右邊按鈕*/
+.next {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
+/*左邊按鈕*/
+.prev {
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+/* Hover效果 */
+.prev:hover, .next:hover {
+  background-color: rgba(218, 159, 192, 0.8);
+}
+/*圖片說明文字*/
+.text {
+  color: #f2f2f2;
+  font-size: 1.5rem;
+  padding: 50px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/*圓點按鈕*/
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #e6b4dc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.8s ease;
+}
+.active, .dot:hover {
+  background-color: #282828;
+}
+/*圖片變暗消失的效果*/
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
 /*導覽列設定*/
 nav {
@@ -25,7 +98,6 @@ color: rgb(223, 204, 218);
 /*頁首*/
 header {
 background: no-repeat, center top fixed; /*不重覆排列、靠上置中、固定位置*/
-background-image: url("bg02.jpg"), url("bg01.jpg");
 background-size: cover; /*不變形，寬高等比例，在必要時局部裁切*/
 background-blend-mode: screen; /*將兩張圖以濾色模式呈現*/
 height: 500px;
@@ -120,7 +192,6 @@ h3 {
 padding: 0.25em 1em;
 text-align: center;
 color: #b86386;
-border: dashed 1px #b86386;
 }
 h5 {
 text-align: center;
@@ -177,4 +248,18 @@ text-decoration: none;
 }  
 footer a:hover { 
 color: #ddb9dd;
+}
+
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #b86386;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
 }

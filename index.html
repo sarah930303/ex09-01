@@ -7,13 +7,28 @@
     <title>公主漢堡</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #scrollToTopBtn {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #b86386;
+          color: #fff;
+          border: none;
+          border-radius: 50%;
+          padding: 10px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+      </style>
 </head>
 <body>
 <header>
     <nav>
-        <a href="#"><i class="fa-solid fa-house-user fa-fw"></i>回主頁</a>
-        <a href="#"><i class="fa-solid fa-thumbs-up fa-fw"></i>關於我們</a>
-        <a href="#"><i class="fa-solid fa-bag-shopping fa-fw"></i>菜單</a>
+        <a href="#"><i class="https://sarah930303.github.io/ex09-01/"></i>回主頁</a>
+        <a href="#"><i class="https://sarah930303.github.io/ex09-03/"></i>關於我們</a>
+        <a href="#"><i class="https://sarah930303.github.io/ex09-02/"></i>菜單</a>
         <a href="#"><i class="fa-solid fa-map-location-dot fa-fw"></i>與我們聯絡</a>               
         <form>
             <input type="search" placeholder="Search" aria-label="Search">        
@@ -102,5 +117,35 @@
     <a href="https://www.instagram.com/mosburger_japan/"><i class="fa-brands fa-instagram-square fa-fw fa-2x"></i>Instagram</a>
     <h6>Copyright © 公主漢堡</h6>
 </footer>
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="回到頂部">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+  <script>
+    // 檢查當前頁面滾動位置
+    window.onscroll = function () {
+      scrollFunction();
+    };
+  
+    function scrollFunction() {
+      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  
+      // 如果滾動位置大於100，顯示箭頭按鈕，否則隱藏
+      if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+      ) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    }
+  
+    // 滾動到頁面頂部
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 </body>
 </html>

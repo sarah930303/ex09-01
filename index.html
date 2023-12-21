@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant-Tw">
 <head>
@@ -118,8 +119,8 @@
     <h6>Copyright © 公主漢堡</h6>
 </footer>
 <button onclick="scrollToTop()" id="scrollToTopBtn" title="回到頂部">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+    <i class="fa-solid fa-hamburger"></i>
+</button>
   
   <script>
     // 檢查當前頁面滾動位置
@@ -145,6 +146,13 @@
     function scrollToTop() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
+
+      var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
     }
   </script>
 </body>
